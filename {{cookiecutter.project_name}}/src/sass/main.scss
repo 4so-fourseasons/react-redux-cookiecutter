@@ -1,0 +1,16 @@
+//
+// The main file where all other files get imported.
+//
+
+// Abstracts - this stuff does not generate any css in the output
+@import "abstracts/config";
+@import "abstracts/colors";
+@import "abstracts/mixins";
+@import "components/svg-sprite.scss";
+
+html {
+    margin: 5px;
+    color: red;
+
+    content: "";
+}

@@ -1,0 +1,12 @@
+[ignore]
+.*/__tests__/.*
+.*/.+\.test.js
+.*/node_modules/.*
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
