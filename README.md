@@ -1,10 +1,10 @@
-![Web](img/web.png)
+<img src="img/web.png" width="300px" />
 
 # ToC
 
 <!-- vim-markdown-toc GFM -->
 
-* [4so-Web-Cookiecutter](#4so-web-cookiecutter)
+* [React-Template](#react-template)
     * [Installing / Getting started](#installing--getting-started)
     * [Developing](#developing)
         * [Built With](#built-with)
@@ -12,9 +12,9 @@
 
 <!-- vim-markdown-toc -->
 
-# 4so-Web-Cookiecutter
+# React-Template
 
-This is our 4so web template to quickly scaffold web projects.
+This is our template to quickly scaffold new React projects.
 
 
 ## Installing / Getting started
@@ -26,13 +26,14 @@ the `git clone` command in and cookiecutter will guide you trough a
 minimal setup:
 
 ```shell
-cookiecutter 4so-web-template
+cookiecutter react-template
 ```
 
 This will create a new project in its own directory and update certain files
-according to the settings you made. This will also initialize a new git
-repository inside the new directory. You can then add some central repository
-(i.e. from our local GitLab) as a remote, make an initial commit and push the changes.
+according to the settings you made. This will also let you initialize a new git
+repository inside the new directory and immediately install npm dependencies.
+You can then add some central remote repository
+(i.e. from our local GitLab) as a remote and make an initial commit.
 
 
 ## Developing
@@ -42,6 +43,12 @@ repository inside the new directory. You can then add some central repository
 This project includes quite a few opinionated settings which where
 made according to our own guidelines. Therefore this template includes:
 
+* React as view-library
+* Redux for state management
+* Redux-loop for sideeffects
+* Reselect for selector memoization
+* Styled-components for component level CSS styling
+* Axios for request handling
 * Webpack as module bundler, dev server and build tool
 * Babel for ES6 and Flow transpilation
 * Flow as type-checker
@@ -56,4 +63,4 @@ made according to our own guidelines. Therefore this template includes:
 
 ## Versioning
 
-We can maybe use [SemVer](http://semver.org/) for versioning. For the versions available, see the [link to tags on this repository](/tags).
+We use [SemVer](http://semver.org/) for versioning.

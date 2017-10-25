@@ -1,5 +1,5 @@
 cache:
-  key: "{{cookiecutter.project_name}}"
+  key: "new_test"
   paths:
     - node_modules/
 

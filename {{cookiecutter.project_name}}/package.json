@@ -11,6 +11,8 @@
     "HTML5",
     "CSS",
     "JavaScript",
+    "React",
+    "Redux",
     "SASS"
   ],
   "bugs": {
@@ -18,7 +20,9 @@
   },
   "scripts": {
     "prestart": "npm run svg-sprite",
-    "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.js",
+    "start": "nf start",
+    "api": "node internals/api.js",
+    "client": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.js",
     "prebuild": "npm run svg-sprite",
     "build": "rimraf dist && cross-env NODE_ENV=production webpack --config webpack.config.js --progress --profile --colors",
     "flow": "flow",
@@ -36,6 +40,7 @@
   },
   "babel": {
     "presets": [
+      "react",
       [
         "env",
         {
@@ -52,10 +57,23 @@
     ],
     "env": {
       "test": {
-        "plugins": [
+        "presets": [
+          "react",
           [
-            "transform-es2015-modules-commonjs"
-          ]
+            "env",
+            {
+              "targets": {
+                "browsers": [
+                  "last 2 versions"
+                ]
+              },
+              "modules": "commonjs"
+            }
+          ],
+          "flow",
+          "stage-3"
+        ],
+        "plugins": [
         ]
       }
     }
@@ -65,10 +83,12 @@
       "src"
     ],
     "moduleFileExtensions": [
-      "js"
+      "js",
+      "jsx"
     ],
     "collectCoverageFrom": [
-      "**/src/**/*.js"
+      "**/src/**/*.js",
+      "**/src/**/*.jsx"
     ],
     "moduleNameMapper": {
       "\\.(jpeg|jpg|png|gif|eot|webp|svg|ttf|woff2|mp3|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
@@ -91,49 +111,67 @@
     "globals": [
       "describe",
       "it",
-      "expect"
+      "expect",
+      "HTMLElement"
     ]
   },
-  "license": "UNLICENSED",
+  "license": "MIT",
   "private": true,
   "author": {
     "name": "{{cookiecutter.maintainer}}",
     "email": "{{cookiecutter.email}}"
   },
-  "contributors": [ ],
+  "contributors": [],
   "homepage": "{{cookiecutter.homepage}}",
   "dependencies": {
+    "axios": "^0.16.2",
     "babel-polyfill": "^6.26.0",
-    "normalize.css": "^7.0.0"
+    "normalize.css": "^7.0.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-dom-factories": "^1.0.2",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "recompose": "^0.26.0",
+    "redux": "^3.7.2",
+    "redux-devtools": "^3.4.0",
+    "redux-loop": "^4.2.1",
+    "reselect": "^3.0.1",
+    "styled-components": "^2.2.1"
   },
   "engines": {},
   "devDependencies": {
-    "autoprefixer": "^7.1.5",
+    "autoprefixer": "^7.1.6",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
     "babel-jest": "^21.2.0",
     "babel-loader": "^7.1.2",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
-    "babel-preset-env": "^1.6.0",
+    "babel-plugin-styled-components": "^1.2.1",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
     "coveralls": "^3.0.0",
-    "cross-env": "^5.0.5",
+    "cross-env": "^5.1.0",
     "css-loader": "^0.28.7",
+    "enzyme": "^3.1.0",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-flowtype": "^2.39.1",
     "extract-text-webpack-plugin": "^3.0.1",
     "file-loader": "^1.1.5",
     "flow-bin": "^0.56.0",
-    "flow-webpack-plugin": "^1.1.0",
+    "flow-webpack-plugin": "^1.2.0",
+    "foreman": "^2.0.0",
     "friendly-errors-webpack-plugin": "^1.6.1",
-    "html-loader": "^0.5.1",
     "html-webpack-plugin": "^2.30.1",
     "image-webpack-loader": "^3.4.2",
     "jest": "^21.2.1",
+    "json-server": "^0.12.0",
+    "jsx-loader": "^0.13.2",
     "node-sass": "^4.5.3",
     "postcss": "^6.0.13",
-    "postcss-loader": "^2.0.7",
+    "postcss-loader": "^2.0.8",
+    "react-hot-loader": "^3.1.1",
     "rimraf": "^2.6.2",
     "sass-loader": "^6.0.6",
     "standard": "^10.0.3",
@@ -145,8 +183,8 @@
     "stylelint-scss": "^2.1.0",
     "stylelint-webpack-plugin": "^0.9.0",
     "svg-sprite": "^1.3.6",
-    "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.9.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.3",
     "webpack-merge": "^4.1.0"
   }
 }

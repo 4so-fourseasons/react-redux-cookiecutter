@@ -4,9 +4,26 @@
 .*/node_modules/.*
 
 [include]
+.*/src/
 
 [libs]
+flow-typed
 
 [lints]
 
 [options]
+# Uncomment the following line to run all watched files through flow
+# This way no explicit // @flow comment in files is necessary
+# all=true
+emoji=true
+module.system.node.resolve_dirname=src
+module.name_mapper='^wpsHelpers$' -> '<PROJECT_ROOT>/src/js/helpers.js'
+module.file_ext=.scss
+module.name_mapper.extension='scss' -> 'empty/object'
+module.file_ext=.css
+module.name_mapper.extension='css' -> 'empty/object'
+module.file_ext=.html
+module.name_mapper.extension='html' -> 'empty/object'
+module.file_ext=.js
+module.file_ext=.jsx
+module.file_ext=.json

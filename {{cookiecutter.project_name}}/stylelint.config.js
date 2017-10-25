@@ -5,6 +5,7 @@ module.exports = {
   ],
   'ignoreFiles': [
     'src/sass/vendor/**/*.scss',
+    'src/sass/_svg-sprite.scss',
     'src/sass/components/_svg-sprite.scss'
   ],
   'plugins': [

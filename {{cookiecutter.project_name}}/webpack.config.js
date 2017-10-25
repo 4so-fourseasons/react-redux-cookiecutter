@@ -7,6 +7,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const StyleLintPlugin = require('stylelint-webpack-plugin')
 
+// Get local ip adress
+const os = require('os')
+const netwIfs = os.networkInterfaces()
+const LOCAL_INTERFACES =
+  Object.getOwnPropertyNames(netwIfs)
+    .map(key => netwIfs[key])
+    .reduce((acc, netArr) => [ ...acc, ...netArr ], [])
+    .filter(details => details.family === 'IPv4' && !details.internal)
+const LOCAL_IP = LOCAL_INTERFACES[0].address
+
 const prod = 'production'
 const dev = 'development'
 
@@ -16,7 +26,7 @@ const isDev = TARGET_ENV === dev
 const isProd = TARGET_ENV === prod
 
 // Entry and output path/filename variables
-const entryPath = path.join(__dirname, 'src/js/index.js')
+const entryPath = path.join(__dirname, 'src/index.js')
 const outputPath = path.join(__dirname, 'dist')
 const outputFilename = isProd ? '[name]-[hash].js' : '[name].js'
 
@@ -29,19 +39,22 @@ const commonConfig = {
     path: outputPath,
 
     // Calc output file name dynamically,
-    filename: `js/${outputFilename}`
+    filename: `${outputFilename}`
   },
   resolve: {
     // Automatically resolves those extensions so they can be omitted when
     // importing a file of those types
-    extensions: ['.js'],
-    modules: ['node_modules', 'src']
+    extensions: ['.js', '.jsx'],
+    modules: ['node_modules', 'src'],
+    alias: {
+      'ag-grid-root': path.join(__dirname, '/node_modules/ag-grid')
+    }
   },
   module: {
     rules: [
       {
         // Transpile ES6
-        test: /\.js?$/,
+        test: /\.(js|jsx)?$/,
         exclude: /node_modules/,
         use: [
           { loader: 'babel-loader' }
@@ -52,39 +65,16 @@ const commonConfig = {
         loader: 'json-loader'
       },
       {
-        test: /\.html$/,
-        use: [{
-          loader: 'html-loader'
-        }]
+        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'url-loader?limi=10000&mimetype=application/font-woff'
       },
       {
-        test: /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        include: [
-          path.resolve(__dirname, 'src/fonts')
-        ],
+        test: /\.(ttf|eot|svg|gif|png)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         use: [
           {
             loader: 'file-loader',
             options: {
-              name: 'fonts/[name].[ext]',
-              outputPath: 'fonts/',
-              useRelativePath: isProd
-            }
-          }
-        ]
-      },
-      {
-        test: /\.(svg|gif|jpg|png|jpeg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        include: [
-          path.resolve(__dirname, 'src/img')
-        ],
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'img/',
-              useRelativePath: isProd
+              name: 'img/[name].[ext]'
             }
           }
         ]
@@ -119,6 +109,8 @@ if (isDev) {
       'webpack-dev-server/client?http://localhost:8080',
       'webpack/hot/only-dev-server',
 
+      'react-hot-loader/patch',
+
       // Entrypoint
       entryPath
     ],
@@ -128,16 +120,16 @@ if (isDev) {
       // contentBase: './src',
       hot: true,
       host: '0.0.0.0',
+      port: 8080,
+      historyApiFallback: true,
       disableHostCheck: true,
-      stats: {
-        colors: true
-      }
+      stats: 'minimal'
     },
     module: {
       rules: [
         {
           // Lint with standard
-          test: /\.js?$/,
+          test: /\.(js|jsx)?$/,
           enforce: 'pre',
           exclude: /node_modules/,
           use: {
@@ -203,7 +195,7 @@ if (isDev) {
 
       // Style linting
       new StyleLintPlugin({
-        configfile: '../stylelint.config.js'
+        configfile: './stylelint.config.js'
       }),
 
       // Nicer webpack logs in the console
@@ -212,7 +204,8 @@ if (isDev) {
       // Helps passing variables between webpack and js-files
       // Gives us the ability to e.g. switch between dev and production environment
       new webpack.DefinePlugin({
-        'process.env.NODE_ENV': JSON.stringify('development')
+        'process.env.NODE_ENV': JSON.stringify('development'),
+        'process.env.LOCAL_IP': JSON.stringify(LOCAL_IP)
       })
     ]
   })

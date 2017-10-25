@@ -11,11 +11,13 @@
     "mode": {
         "css": {
             "dest": "sass",
+            "prefix": ".svg-%s",
+            "dimensions": "__dims",
             "sprite": "../img/sprite.svg",
             "bust": false,
             "render": {
                 "scss": {
-                    "dest": "components/_svg-sprite.scss"
+                    "dest": "_svg-sprite.scss"
                 }
             },
             "example": false

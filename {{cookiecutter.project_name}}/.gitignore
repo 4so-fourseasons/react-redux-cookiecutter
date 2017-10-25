@@ -180,3 +180,6 @@ src/css
 
 /dist
 /build
+
+*/**/sprite.svg
+*/**/_svg-sprite.scss

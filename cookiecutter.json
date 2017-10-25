@@ -1,8 +1,8 @@
 {
-    "project_name": "4so-Web-Template",
+    "project_name": "React-Template",
     "maintainer": "Theo Salzmann",
     "email": "theo.salzmann@4so.de",
-    "short_description": "Kickstart 4so webapps",
+    "short_description": "Kickstart 4so react-apps",
     "repo_url": "git@gitlab.4so.local:fourseasons/{{cookiecutter.project_name}}",
     "issue_url": "http://gitlab.4so.local/fourseasons/{{cookiecutter.project_name}}",
     "homepage": "http://4so.de"
