@@ -22,7 +22,7 @@ install_npm = input_fnc('Install npm dependencies? [YES][no]')
 if install_npm.lower() == 'no':
     pass
 else:
-    subprocess.call(['npm', 'i'])
+    subprocess.call('npm i', shell=True)
 
 if init_git.lower() == 'no':
     pass
