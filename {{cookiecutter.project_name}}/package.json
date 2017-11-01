@@ -39,6 +39,7 @@
     "svg-sprite": "rimraf src/img/sprite.svg && svg-sprite --config svg-sprite.json src/img/**/*.svg"
   },
   "babel": {
+    "plugins": ["babel-plugin-styled-components"],
     "presets": [
       "react",
       [
