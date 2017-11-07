@@ -2,12 +2,6 @@
 
 import { loop, Cmd } from 'redux-loop'
 
-import {
-  INIT,
-  USER_FETCH_FAIL,
-  USER_FETCH_SUCCESS
-} from './constants'
-
 import type {
   Action,
   State
@@ -25,7 +19,7 @@ const fakeUserReducer = (state: State = {
   error: null
 }, action: Action): State => {
   switch (action.type) {
-    case INIT:
+    case 'INIT':
       return loop(
         {...state, loading: true},
         Cmd.run(fetchUser, {
@@ -35,10 +29,10 @@ const fakeUserReducer = (state: State = {
         })
       )
 
-    case USER_FETCH_SUCCESS:
+    case 'USER_FETCH_SUCCESS':
       return { ...state, user: action.payload, loading: false }
 
-    case USER_FETCH_FAIL:
+    case 'USER_FETCH_FAIL':
       return { ...state, error: action.payload, loading: false }
 
     default:
