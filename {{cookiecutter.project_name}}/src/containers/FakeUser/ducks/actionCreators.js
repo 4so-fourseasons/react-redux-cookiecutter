@@ -10,11 +10,9 @@ import type {
   UserFetchSuccess
 } from './types'
 
-import { INIT, USER_FETCH_FAIL, USER_FETCH_SUCCESS } from './constants'
-
 export const init = (): Init => {
   return {
-    type: INIT
+    type: 'INIT'
   }
 }
 
@@ -24,14 +22,14 @@ export const fetchUser = (userId: string): Promise<*> => {
 
 export const userFetchSuccessfulAction = (user: Object): UserFetchSuccess => {
   return {
-    type: USER_FETCH_SUCCESS,
+    type: 'USER_FETCH_SUCCESS',
     payload: user.data
   }
 }
 
 export const userFetchFailedAction = (err: Object): UserFetchFail => {
   return {
-    type: USER_FETCH_FAIL,
+    type: 'USER_FETCH_FAIL',
     payload: err
   }
 }

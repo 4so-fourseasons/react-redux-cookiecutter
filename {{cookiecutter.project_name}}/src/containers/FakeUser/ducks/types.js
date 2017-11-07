@@ -1,11 +1,5 @@
 // @flow
 
-import {
-  INIT,
-  USER_FETCH_FAIL,
-  USER_FETCH_SUCCESS
-} from './constants'
-
 export type User = {
   +id: string,
   +name: string,
@@ -18,8 +12,8 @@ export type State = {
   +error: ?Object
 }
 
-export type Init = {| type: typeof INIT |}
-export type UserFetchSuccess = {| type: typeof USER_FETCH_SUCCESS, payload: User |}
-export type UserFetchFail = {| type: typeof USER_FETCH_FAIL, payload: Object |}
+export type Init = {| type: 'INIT' |}
+export type UserFetchSuccess = {| type: 'USER_FETCH_SUCCESS', payload: User |}
+export type UserFetchFail = {| type: 'USER_FETCH_FAIL', payload: Object |}
 
 export type Action = Init | UserFetchSuccess | UserFetchFail
