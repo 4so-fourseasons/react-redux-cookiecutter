@@ -45,7 +45,7 @@ const commonConfig = {
     // Automatically resolves those extensions so they can be omitted when
     // importing a file of those types
     extensions: ['.js', '.jsx'],
-    modules: ['node_modules', 'src'],
+    modules: ['node_modules', 'src']
   },
   module: {
     rules: [
@@ -103,7 +103,6 @@ if (isDev) {
       'babel-polyfill',
 
       // Dev-server
-      'webpack-dev-server/client?http://localhost:8080',
       'webpack/hot/only-dev-server',
 
       'react-hot-loader/patch',

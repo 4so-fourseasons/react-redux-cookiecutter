@@ -148,8 +148,14 @@ To run Jest an check if your tests pass invoke:
 npm run test
 ```
 
-This will also generate a coverage folder, containing information
-about the projects test coverage.
+To run jest and generate coverage, run:
+
+```shell
+npm run test:coverage
+```
+
+To view the coverage files inside your browser, open the `index.html` inside
+`coverage/lcov-report/`.
 
 To continuously run Jest and have Jest watch for changes, run:
 

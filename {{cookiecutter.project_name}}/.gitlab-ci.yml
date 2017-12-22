@@ -26,7 +26,8 @@ test:
   stage: test
   script:
     - npm run flow
-    - npm run test
+    - npm run test:coverage
+  coverage: '/All files[^|]*\|[^|]*\s+([\d\.]+)/'
 
 build:
   stage: build
