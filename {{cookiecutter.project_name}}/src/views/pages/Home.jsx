@@ -3,9 +3,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import FakeUser from 'containers/FakeUser'
+import FakeUser from 'views/containers/FakeUser'
 
-import H1 from 'components/H1'
+import H1 from 'views/components/H1'
 
 const Wrapper = styled.div``
 

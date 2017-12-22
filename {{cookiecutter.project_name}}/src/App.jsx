@@ -11,11 +11,11 @@ import { ThemeProvider } from 'styled-components'
 
 import defaultTheme from 'themes/default'
 
-import Home from 'pages/Home'
+import Home from 'views/pages/Home'
 
-import Content from 'components/Content'
-import Header from 'components/Header'
-import PageWrapper from 'components/PageWrapper'
+import Content from 'views/components/Content'
+import Header from 'views/components/Header'
+import PageWrapper from 'views/components/PageWrapper'
 
 const App = () => (
   <Router>

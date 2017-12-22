@@ -1,4 +1,4 @@
-import * as actions from '../actionCreators'
+import * as actions from '../actions'
 
 describe('FakeUser actionCreators', () => {
   it('Should create action to init fakeUser', () => {

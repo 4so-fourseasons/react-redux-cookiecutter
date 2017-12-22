@@ -1,3 +1,7 @@
+[![pipeline status]({{cookiecutter.url}}/badges/dev/pipeline.svg)]({{cookiecutter.url}}/commits/dev)
+[![coverage report]({{cookiecutter.url}}/badges/dev/coverage.svg)]({{cookiecutter.url}}/commits/dev)
+
+
 # ToC
 
 <!-- vim-markdown-toc GFM -->
@@ -180,4 +184,4 @@ We use [SemVer](http://semver.org/) for versioning.
 
 ## Style guide
 
-4so-Guidelines [v1.0.0](http://gitlab.4so.local/fourseasons/guidelines/tags/v1.0.0)
+4so-Guidelines [v1.2.2](http://gitlab.4so.local/fourseasons/guidelines/tags/v1.2.2)

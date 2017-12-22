@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { init } from './ducks/actionCreators'
-import { getFakeUser, getUserLoading } from './ducks/selectors'
+import { init } from 'ducks/fakeUser/actions'
+import { getFakeUser, getUserLoading } from 'ducks/fakeUser/selectors'
 
 class FakeUser extends React.Component {
   constructor (props) {

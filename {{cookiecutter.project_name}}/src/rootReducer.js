@@ -2,7 +2,7 @@
 
 import { combineReducers } from 'redux-loop'
 
-import { fakeUserReducer } from 'containers/FakeUser/ducks/reducers.js'
+import { fakeUserReducer } from 'ducks/fakeUser/reducers.js'
 
 export default combineReducers({
   fakeUser: fakeUserReducer

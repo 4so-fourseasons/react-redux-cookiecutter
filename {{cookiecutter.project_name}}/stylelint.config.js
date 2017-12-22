@@ -1,7 +1,6 @@
 module.exports = {
   'extends': [
-    'stylelint-config-standard',
-    'stylelint-config-idiomatic-order'
+    './stylelint-4so-order.js'
   ],
   'ignoreFiles': [
     'src/sass/vendor/**/*.scss',

@@ -17,7 +17,7 @@ import {
   fetchUser,
   userFetchFailedAction,
   userFetchSuccessfulAction
-} from './actionCreators'
+} from './actions'
 
 const fakeUserReducer = (state: State = {
   loading: false,

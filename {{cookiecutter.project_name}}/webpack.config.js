@@ -46,9 +46,6 @@ const commonConfig = {
     // importing a file of those types
     extensions: ['.js', '.jsx'],
     modules: ['node_modules', 'src'],
-    alias: {
-      'ag-grid-root': path.join(__dirname, '/node_modules/ag-grid')
-    }
   },
   module: {
     rules: [

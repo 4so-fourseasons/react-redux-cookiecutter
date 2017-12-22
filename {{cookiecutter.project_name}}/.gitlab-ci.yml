@@ -17,8 +17,8 @@ before_script:
 lint:
   stage: lint
   script:
-    - npm run stylelint:fix
-    - npm run lint:fix
+    - npm run stylelint
+    - npm run lint
   allow_failure: false
 
 
