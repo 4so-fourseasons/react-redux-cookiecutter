@@ -1,4 +1,4 @@
-eimg src="img/web.png" width="300px" />
+<img src="img/web.png" width="300px" />
 
 # ToC
 
