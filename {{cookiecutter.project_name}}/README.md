@@ -190,4 +190,4 @@ We use [SemVer](http://semver.org/) for versioning.
 
 ## Style guide
 
-4so-Guidelines [v1.2.2](http://gitlab.4so.local/fourseasons/guidelines/tags/v1.2.2)
+4so-Guidelines [v1.2.2](http://gitlab.4so.local/fourseasons/guidelines/tree/v1.2.2)
