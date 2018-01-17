@@ -51,10 +51,8 @@ made according to our own guidelines. Therefore this template includes:
 * Babel for ES6 and Flow transpilation
 * Flow as type-checker
 * Standard as JS linter
-* StyleLint as scss/css linter
 * CSS-Autoprefixing via postcss
 * Jest as testing framework
-* SVG-Sprite for automatic sprite/scss generation
 * normalize.css as CSS-reset
 * Furhtermore the template is initialized with our README-template where basic setup/dev-server/build steps are already prefilled
 

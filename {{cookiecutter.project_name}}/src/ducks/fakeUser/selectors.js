@@ -1,6 +1,6 @@
 // @flow
 
-import type { State } from 'globalTypes.js'
+import type { State } from 'globalTypes'
 
 import type { User } from './types'
 
