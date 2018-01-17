@@ -38,5 +38,10 @@ else:
     print('Adding remote origin {{cookiecutter.repo_url}}...')
     subprocess.call(['git', 'remote', 'add', 'origin', '{{ cookiecutter.repo_url }}'])
 
-    print('Checking out dev branch')
-    subprocess.call(['git', 'checkout', '-b', 'dev'])
+    create_upstream = input_fnc('Create upstream to master and make initial push? [YES] [no]')
+
+    if create_upstream.lower() == 'no':
+        pass
+    else:
+        subprocess.call(['git', 'push', '-u', 'origin', 'master'])
+

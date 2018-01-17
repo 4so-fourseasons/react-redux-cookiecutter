@@ -1,5 +1,7 @@
-[![pipeline status]({{cookiecutter.url}}/badges/dev/pipeline.svg)]({{cookiecutter.url}}/commits/dev)
-[![coverage report]({{cookiecutter.url}}/badges/dev/coverage.svg)]({{cookiecutter.url}}/commits/dev)
+[![Build Status](https://travis-ci.org/{{cookiecutter.namespace}}/{{cookiecutter.project_name}}.svg?branch=master)](https://travis-ci.org/{{cookiecutter.namespace}}/{{cookiecutter.project_name}})
+[![Coverage Status](https://coveralls.io/repos/github/{{cookiecutter.namespace}}/{{cookiecutter.project_name}}/badge.svg?branch=master)](https://coveralls.io/github/{{cookiecutter.namespace}}/{{cookiecutter.project_name}}?branch=master)
+
+[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
 
 
 # ToC
@@ -55,10 +57,8 @@ made according to our own guidelines. Therefore this template includes:
 * Babel for ES6 and Flow transpilation
 * Flow as type-checker
 * Standard as JS linter
-* StyleLint as scss/css linter
 * CSS-Autoprefixing via postcss
 * Jest as testing framework
-* SVG-Sprite for automatic sprite/scss generation
 * normalize.css as CSS-reset
 
 
@@ -72,13 +72,10 @@ To start the development server run:
 npm start
 ```
 
-This will built the svg-sprite files and start an instance
-of webpack-dev-server as well as an instance of
+This and start an instance of webpack-dev-server as well as an instance of
 a json-server which provides a fake api.
-From then on the whole project will
-rebuild, run your JS files through the Flow type-checker and
-lint you JS with standard and you scss/CSS with stylelint whenever you
-save a file.
+From then on the whole project will rebuild, run your JS files through the Flow type-checker and
+lint your JS with standard whenever you save a file.
 
 
 #### Type-Checker (Flow)
@@ -124,18 +121,6 @@ or to autmatically fix issues if possible, run:
 npm run lint:fix
 ```
 
-To separately lint your stylesheets, run:
-
-```shell
-npm run stylelint
-```
-
-or to automatically fix issues if possible, run:
-
-```shell
-npm run stylelint:fix
-```
-
 
 #### Testing
 
@@ -172,7 +157,7 @@ To build the project, run:
 npm run build
 ```
 
-This will build your svg-sprite files, compile, minify and bundle
+This will compile, minify and bundle
 everything and put all packaged files into the _dist/_ directory (if there is no such directory it will just be newly created, an existing directory will be removed first).
 To allow our clients browsers to cache vendor files and only update the cache when it is really necessary, all important filenames include hashes for reference inside the built manifest file.
 

@@ -5,7 +5,6 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
-const StyleLintPlugin = require('stylelint-webpack-plugin')
 
 // Get local ip adress
 const os = require('os')
@@ -188,11 +187,6 @@ if (isDev) {
 
       // flow type checking
       new FlowWebpackPlugin(),
-
-      // Style linting
-      new StyleLintPlugin({
-        configfile: './stylelint.config.js'
-      }),
 
       // Nicer webpack logs in the console
       new FriendlyErrorsWebpackPlugin(),
