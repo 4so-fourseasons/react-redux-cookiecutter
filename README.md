@@ -1,10 +1,12 @@
+[![Build Status](https://travis-ci.org/4so-fourseasons/react-redux-cookiecutter.svg?branch=master)](https://travis-ci.org/4so-fourseasons/react-redux-cookiecutter)
+
 <img src="img/web.png" width="300px" />
 
 # ToC
 
 <!-- vim-markdown-toc GFM -->
 
-* [React-Template](#react-template)
+* [react-redux-cookiecutter](#react-redux-cookiecutter)
     * [Installing / Getting started](#installing--getting-started)
     * [Developing](#developing)
         * [Built With](#built-with)
@@ -12,7 +14,7 @@
 
 <!-- vim-markdown-toc -->
 
-# React-Template
+# react-redux-cookiecutter
 
 This is our template to quickly scaffold new React projects.
 
