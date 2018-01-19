@@ -17,7 +17,6 @@ before_script:
 lint:
   stage: lint
   script:
-    - npm run stylelint
     - npm run lint
   allow_failure: false
 
@@ -26,6 +25,7 @@ test:
   stage: test
   script:
     - npm run flow
+    - npm run flow stop #problems with flow on gitlab-ci
     - npm run test:coverage
   coverage: '/All files[^|]*\|[^|]*\s+([\d\.]+)/'
 
