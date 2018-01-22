@@ -4,7 +4,10 @@ from sys import version_info
 
 py3 = version_info[0] > 2
 
-is_dev = os.environ['IS_DEVELOPMENT']
+if os.getenv('IS_DEVELOPMENT') is not None:
+    is_dev = os.environ['IS_DEVELOPMENT']
+else:
+    is_dev = False
 
 def run_script():
     if is_dev == 'true':

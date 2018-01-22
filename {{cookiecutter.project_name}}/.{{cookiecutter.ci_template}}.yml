@@ -1,3 +1,22 @@
+{%- if cookiecutter.ci_template == 'travis' -%}
+language: node_js
+
+node_js:
+    - "8.4.0"
+
+cache:
+    directories:
+        - node_modules
+
+install:
+    - npm install
+
+script:
+    - npm run lint
+    - npm run flow
+    - npm run test:coveralls
+    - npm run build
+{%- elif cookiecutter.ci_template == 'gitlab-ci' -%}
 cache:
   key: "new_test"
   paths:
@@ -44,4 +63,4 @@ build:
     - dev
 
   allow_failure: false
-
+{%- endif -%}

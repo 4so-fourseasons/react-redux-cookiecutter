@@ -2,10 +2,11 @@
     "project_name": "react-redux-starter",
     "maintainer": "Theo Salzmann",
     "email": "theo.salzmann@4so.de",
+    "homepage": "http://4so.de",
     "short_description": "Kickstart react/redux applications",
     "base_url": "github.com",
     "namespace": "4so-fourseasons",
     "repo_url": "git@{{cookiecutter.base_url}}:{{cookiecutter.namespace}}/{{cookiecutter.project_name}}.git",
     "url": "https://{{cookiecutter.base_url}}/{{cookiecutter.namespace}}/{{cookiecutter.project_name}}/issues",
-    "homepage": "http://4so.de"
+    "ci_template": ["travis", "gitlab-ci"]
 }

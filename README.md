@@ -30,7 +30,9 @@ Now you can simply run the following command to install the template:
 ```
 
 This will create a new project in its own directory and update certain files
-according to the settings you made. This will also let you initialize a new git
+according to the settings you make. Furthermore you can choose between a simple
+preconfigured `.travis.yml` and a `.gitlab-ci.yml`.
+This will also let you initialize a new git
 repository inside the new directory and immediately install npm dependencies.
 You can then add some central remote repository
 (i.e. from our local GitLab) as a remote and make an initial commit.
