@@ -25,7 +25,7 @@ test:
   stage: test
   script:
     - npm run flow
-    - npm run flow stop #problems with flow on gitlab-ci
+    - npm run flow stop # explicitly stop the flow-server, because the process sometimes hangs and crashes the CI-runner
     - npm run test:coverage
   coverage: '/All files[^|]*\|[^|]*\s+([\d\.]+)/'
 
