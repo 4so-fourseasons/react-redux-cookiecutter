@@ -57,7 +57,6 @@ made according to our own guidelines. Therefore this template includes:
 * Babel for ES6 and Flow transpilation
 * Flow as type-checker
 * Standard as JS linter
-* CSS-Autoprefixing via postcss
 * Jest as testing framework
 * normalize.css as CSS-reset
 
