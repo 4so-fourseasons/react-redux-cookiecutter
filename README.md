@@ -6,7 +6,7 @@
 
 <!-- vim-markdown-toc GFM -->
 
-* [react-redux-cookiecutter](#react-redux-cookiecutter)
+* [4so-react-redux-cookiecutter](#react-redux-cookiecutter)
     * [Installing / Getting started](#installing--getting-started)
     * [Developing](#developing)
         * [Built With](#built-with)
@@ -14,7 +14,7 @@
 
 <!-- vim-markdown-toc -->
 
-# react-redux-cookiecutter
+# 4so-react-redux-cookiecutter
 
 This is our template to quickly scaffold new React projects.
 
@@ -55,9 +55,7 @@ made according to our own guidelines. Therefore this template includes:
 * Babel for ES6 and Flow transpilation
 * Flow as type-checker
 * Standard as JS linter
-* CSS-Autoprefixing via postcss
 * Jest as testing framework
-* normalize.css as CSS-reset
 * Furhtermore the template is initialized with our README-template where basic setup/dev-server/build steps are already prefilled
 
 
